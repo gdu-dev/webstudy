@@ -13,6 +13,7 @@
             font-weight: 900;                       /* 디폴트 400, 100 ~ 900 */
             font-style: italic;                     /* italic : 기울임, none : 기울임 없애기 */
 
+            /* 블록 요소는 정렬이 된다. */
             text-align: center;                     /* 텍스트 정렬 : left, right, center, justify */
             text-decoration: underline;             /* underline : 밑줄, line-through : 취소선, none : 선 없애기 */
             text-shadow: 5px 5px 1px gray;        /* 그림자 : x크기 y크기 blur 색상 */
@@ -26,6 +27,23 @@
             color: #FFFFFF;
             color: rgba(0, 0, 0, 0.5);            /* alpha(투명도) : 0(투명) ~ 1(불투명) */
         }
+        h1 {
+            /*
+                벤더 프리픽스
+                1. Vender Prefix
+                2. CSS 속성 앞에 브라우저 벤더(제공업체)를 작성하는 것을 의미한다.
+                3. 종류
+                    1) -webkit- : 크롬, 사파리
+                    2) -moz-    : 파이어폭스
+                    3) -o-      : 오페라
+            */
+            -webkit-text-stroke-color: crimson;
+            -webkit-text-stroke-width: 1px;
+        }
+        a {
+            /* 인라인 요소들은 정렬이 안 된다. */
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +52,10 @@
 
     <pre>Nice to meet you</pre>
     <pre>You good?</pre>
+
+    <h1>I'm fine</h1>
+
+    <a>Contact Us</a>
 
 </body>
 </html>
