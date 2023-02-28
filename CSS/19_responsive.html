@@ -37,9 +37,14 @@
                 background-color: pink;
             }
         }
-        @media screen and (min-width: 641px) {  /* 너비가 641px 이상인 경우에 적용된다. */
+        @media screen and (min-width: 641px) and (max-width: 768px) {  /* 너비가 641px 이상 768px 이하인 경우에 적용된다. */
             body {
                 background-color: orange;
+            }
+        }
+        @media screen and (min-width: 769px) {  /* 너비가 769px 이상인 경우에 적용된다. */
+            body {
+                background-color: yellowgreen;
             }
         }
     </style>
