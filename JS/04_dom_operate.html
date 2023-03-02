@@ -42,7 +42,23 @@
     </script>
 
 
-
+    <div id="box4">Hello World</div>
+    <script>
+        /*
+            CSS 적용하기
+            1. style 속성을 이용한다.
+            2. inline 방식으로 CSS가 적용된다. (JavaScript를 이용한 CSS는 우선순위가 가장 높다.)
+            3. CSS 속성 적용 방식
+                1) 마침표 : CSS 속성에서 하이픈(-)을 제거한 뒤 camel case 방식의 이름으로 바꿔서 사용한다.
+                2) 대괄호 : CSS 속성을 문자열 형식으로 그대로 사용한다.
+            4. 작성 예시
+                1) 마침표 : dom.style.fontSize = '12px';
+                2) 대괄호 : dom.style['font-size'] = '12px';
+        */
+         var box4 = document.getElementById('box4');
+         box4.style.color = '#efefef';
+         box4.style['color'] = '#030303';
+    </script>
 
 
 
