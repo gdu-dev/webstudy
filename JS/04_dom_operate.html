@@ -8,6 +8,7 @@
 </head>
 <body>
     
+
     <div id="box1"></div>
     <script>
         // 내부 텍스트 : textContent
@@ -21,6 +22,30 @@
         var box2 = document.getElementById('box2');
         console.log(box2.textContent);
     </script>
+
+
+    <div id="box3"></div>
+    <script>
+        // 내부 HTML 요소 : innerHTML
+        var box3 = document.getElementById('box3');
+        box3.innerHTML = '<p>문단</p>';
+    </script>
+
+    <ul id="season"></ul>
+    <script>
+        //  내부 요소 추가를 위해서 + 연산자를 사용할 수 있다.
+        var season = document.getElementById('season');
+        season.innerHTML += '<li>봄</li>';
+        season.innerHTML += '<li>여름</li>';
+        season.innerHTML += '<li>가을</li>';
+        season.innerHTML += '<li>겨울</li>';
+    </script>
+
+
+
+
+
+
 
 </body>
 </html>
