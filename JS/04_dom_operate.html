@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="box1"></div>
+    <script>
+        // 내부 텍스트 : textContent
+        var box1 = document.getElementById('box1');
+        box1.textContent = 'Hello World';
+    </script>
+
+    <div id="box2"><p>문단</p></div>
+    <script>
+        // textContent는 태그를 제외한 내부 텍스트만을 의미한다.
+        var box2 = document.getElementById('box2');
+        console.log(box2.textContent);
+    </script>
+
+</body>
+</html>
