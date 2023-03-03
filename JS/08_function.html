@@ -175,5 +175,29 @@
 
     </script>
 
+    <script>
+        
+        /*
+            5. 반환
+                1) 반환 타입의 선언이 없다.
+                2) return; 을 통해서 함수를 종료할 수 있다.
+                3) return 값; 을 통해서 값을 반환할 수 있다.
+        */
+
+        // 함수 정의
+        function func7(n) {
+            if(n == 0) {
+                return;  // 0이 전달되면 함수를 종료한다.
+            }
+            return n + 1;  // 0이 아닌 값이 전달되면 1을 증가시켜서 반환한다.
+        }
+
+        // 함수 호출
+        console.log(func7(10));
+        console.log(func7(0));
+
+    </script>
+
+
 </body>
 </html>
