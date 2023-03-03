@@ -82,5 +82,16 @@
         document.getElementById('box1').innerHTML = str;
     </script>
 
+    <div id="box2"></div>
+    <script>
+        var menu = ['메일', '카페', '블로그', '지식iN', '쇼핑'];
+        var str = '<ul>';
+        for(let i = 0; i < menu.length; i++){
+            str += '<li>' + menu[i] + '</li>';
+        }
+        str += '</ul>';
+        document.getElementById('box2').innerHTML = str;
+    </script>
+
 </body>
 </html>
