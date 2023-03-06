@@ -55,6 +55,7 @@
 
         // 5초 타이머 구현하기(5 → 4 → 3 → 2 → 1 → 땡)
 
+        /*
         var countDown = 5;
         var timer1 = document.getElementById('timer1');
         var timerId = setInterval(function(){
@@ -65,6 +66,53 @@
                 timer1.textContent = countDown--;
             }
         }, 1000);
+        */
+
+    </script>
+
+    <script>
+
+        /*
+            재귀 호출 예시 : factorial 구하기 (5! = 5*4*3*2*1)
+            5! = 5 * 4!    fnFactorial(5) = 5 * fnFactorial(4)
+            4! = 4 * 3!    fnFactorial(4) = 4 * fnFactorial(3)
+            3! = 3 * 2!    fnFactorial(3) = 3 * fnFactorial(2)
+            2! = 2 * 1!    fnFactorial(2) = 2 * fnFactorial(1)
+            1! = 1         fnFactorial(1) = 1
+            --------------------------------------------------
+                           fnFactorial(n) = n * fnFactorial(n - 1);
+        */
+        
+        function fnFactorial(n){
+            if(n == 1) {
+                return 1;
+            } else {
+                return n * fnFactorial(n - 1);   
+            }
+        }
+        
+        console.log(fnFactorial(5));
+
+    </script>
+
+    <h1 id="timer2"></h1>
+    <script>
+
+        // 5초 타이머 구현하기(5 → 4 → 3 → 2 → 1 → 땡)
+
+        var timer2 = document.getElementById('timer2');
+        function fnTimer(countDown){
+            setTimeout(function(){
+                if(countDown == 0){
+                    timer2.textContent = '땡';
+                } else {
+                    timer2.textContent = countDown;
+                    fnTimer(countDown - 1);
+                }
+            }, 1000);
+        }
+
+        fnTimer(5);
 
     </script>
 
