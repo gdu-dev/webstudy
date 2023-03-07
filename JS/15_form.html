@@ -98,6 +98,56 @@
 
     </script>
 
+    <!-- 4. 체크 박스 선택하기 -->
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+    <div>
+        <label for="chk_all">
+            <input type="checkbox" id="chk_all">
+            모두 동의합니다.
+        </label>
+        <label for="chk_service">
+            <input type="checkbox" id="chk_service" class="chk_one">
+            이용약관에 동의합니다.
+        </label>
+        <label for="chk_privacy">
+            <input type="checkbox" id="chk_privacy" class="chk_one">
+            개인정보 동의합니다.
+        </label>
+        <label for="chk_promotion">
+            <input type="checkbox" id="chk_promotion" class="chk_one">
+            프로모션 동의합니다.
+        </label>
+    </div>
+    <script>
+
+        // 전체 동의 체크박스
+        var chkAll = document.getElementById('chk_all');
+
+        // 개별 동의 체크박스들
+        var chkOneList = document.getElementsByClassName('chk_one');
+
+        // 전체 동의를 체크하면 -> 개별 동의가 모두 체크되고,
+        // 전체 동의를 해제하면 -> 개별 동의가 모두 해제된다.
+        chkAll.onclick = function(){
+            for(let i = 0; i < chkOneList.length; i++){
+                chkOneList[i].checked = chkAll.checked;
+            }
+        }
+
+        // 개별 동의를 클릭하면 -> 모든 개별 동의의 체크 유무를 확인해서
+        // 모두 체크되었으면 전체 동의를 체크하고, 아니면 전체 동의를 해제한다.
+        for(let i = 0; i < chkOneList.length; i++){
+            chkOneList[i].onclick = function(){
+
+            }
+        }
+
+    </script>
+
     <!-- 연습 -->
     <div>
         <form id="frm_ex">
