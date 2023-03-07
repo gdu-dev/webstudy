@@ -10,19 +10,64 @@
     
     <!-- 1. <button>을 이용한 submit -->
     <div>
-        <form action="https://search.daum.net/search" method="get">
-            <input type="text" name="q">
+        <form id="frm_daum" action="https://search.daum.net/search" method="get">
+            <input id="q" type="text" name="q">
             <button type="submit">다음검색</button>
         </form>
     </div>
+    <script>
+
+        // 이벤트 타입 : submit
+        // 이벤트 대상 : <form></form>
+
+        // submit 이벤트 등록
+        // 1. 고전 이벤트 : 문서객체.onsubmit = function(){}
+        // 2. 표준 이벤트 : 문서객체.addEventListener('submit', function(){});
+
+        // 이벤트 대상
+        var frmDaum = document.getElementById('frm_daum');
+
+        // 검색어 입력란 : <input id="q">
+        var q = document.getElementById('q');
+
+        // 이벤트 등록 (고전 이벤트)
+        frmDaum.onsubmit = function(event){
+            if(q.value == ''){
+                alert('검색어가 입력되지 않았습니다.');
+                q.focus();               // 검색어 입력란에 자동으로 커서를 보냄
+                event.preventDefault();  // submit 방지
+                return;                  // 이벤트 종료(이벤트 리스너의 종료)
+            }
+        }
+
+    </script>
 
     <!-- 2. <input type="submit">을 이용한 submit -->
     <div>
-        <form action="https://www.google.co.kr/search" method="get">
-            <input type="text" name="q">
-            <input type="submit" value="구글검색">
+        <form id="frm_google" action="https://www.google.co.kr/search" method="get">
+            <input id="gq" type="text" name="q">
+            <input type="button" value="구글검색">
         </form>
     </div>
+    <script>
+
+        // 검색어 입력란
+        var gq = document.getElementById('gq');
+
+        // 이벤트 대상
+        var frmGoogle = document.getElementById('frm_google');
+
+        // 이벤트 등록 (표준 이벤트)
+        frmGoogle.addEventListener('submit', function(event){
+            if(gq.value == ''){
+                event.preventDefault();
+                return;
+            }
+        });
+
+    </script>
+
+    <!-- 3. <input type="button">을 이용한 submit -->
 
 </body>
 </html>
