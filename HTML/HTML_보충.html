@@ -126,7 +126,51 @@
         </dl>
     </div>
 
-
+    <div>
+        <div>
+            <label for="id">
+                아이디
+                <input type="text" placeholder="아이디" id="id">
+            </label>
+            <input type="button" value="중복확인">
+        </div>
+        <div>
+            <label for="pw">
+                비밀번호
+                <input type="password" placeholder="새 비밀번호" id="pw">
+            </label>
+        </div>
+        <div>
+            <label for="pw2">
+                비밀번호 확인
+                <input type="password" placeholder="비밀번호 확인" id="pw2">
+            </label>
+        </div>
+        <div>
+            <label for="email">
+                이메일
+                <input type="text" placeholder="이메일" id="email">
+            </label>
+            <span>@</span>
+            <input type="text" placeholder="직접 입력" list="site">
+            <datalist id="site">
+                <option value="gmail.com"></option>
+                <option value="naver.com"></option>
+                <option value="daum.net"></option>
+            </datalist>
+        </div>
+    </div>
+    <div>
+        <fieldset>
+            <legend>성별</legend>
+            <label for="m">
+                <input type="radio" id="m" name="gender" checked>남자
+            </label>
+            <label for="f">
+                <input type="radio" id="f" name="gender">여자
+            </label>
+        </fieldset>
+    </div>
 
 
 
