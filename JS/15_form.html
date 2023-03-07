@@ -46,7 +46,7 @@
     <div>
         <form id="frm_google" action="https://www.google.co.kr/search" method="get">
             <input id="gq" type="text" name="q">
-            <input type="button" value="구글검색">
+            <input type="submit" value="구글검색">
         </form>
     </div>
     <script>
@@ -68,6 +68,35 @@
     </script>
 
     <!-- 3. <input type="button">을 이용한 submit -->
+    <div>
+        <form id="frm_naver" action="https://search.naver.com/search.naver" method="get">
+            <input id="query" type="text" name="query">
+            <input type="button" value="네이버검색" id="btn_naver">
+        </form>
+    </div>
+    <script>
+
+        // 검색어 입력란
+        var query = document.getElementById('query');
+
+        // 검색 폼
+        var frmNaver = document.getElementById('frm_naver');
+
+        // 검색 버튼
+        var btnNaver = document.getElementById('btn_naver');
+
+        // click 이벤트 등록 (고전 이벤트)
+        btnNaver.onclick = function(event){
+            if(query.value == ''){
+                event.preventDefault();  // <input type="button"> 버튼을 클릭하면 어떤 일이 있는지? 원래 아무 일이 없다.
+                                         // 원래 하는 일이 없기 때문에 event.preventDefault()는 의미 없는 코드가 된다.
+                return;                  // 하지만, return은 이벤트 리스너를 종료시키는 역할을 수행하므로
+                                         // return 이후에 나타난 submit 실행 코드의 실행을 막을 수 있다.
+            }
+            frmNaver.submit();
+        }
+
+    </script>
 
 </body>
 </html>
