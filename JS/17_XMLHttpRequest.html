@@ -142,8 +142,16 @@
 
     <div>
         <input type="button" id="btn_req_json" value="제품정보요청3">
-        <div id="res_json"></div>
+        <div id="res_json" class="product_list"></div>
     </div>
+    <style>
+        .product_list {
+            display: flex;
+        }
+        .product {
+            border: 1px solid gray;
+        }
+    </style>
     <script>
         document.getElementById('btn_req_json').addEventListener('click', ()=>{
             var xhr = new XMLHttpRequest();
@@ -151,10 +159,16 @@
             xhr.send();
             xhr.addEventListener('readystatechange', ()=>{
                 if(xhr.readyState == 4 && xhr.status == 200){
-                    var data = xhr.responseText;
-                    console.log(data, typeof data);
-                    var obj = JSON.parse(data);
-                    console.log(obj, typeof obj);
+                    var data = JSON.parse(xhr.responseText);
+                    var str = '';
+                    for(let i = 0; i < data.length; i++){
+                        str += '<div class="product">';
+                        str += '<span>' + data[i].model + '</span>';
+                        str += '<span>' + data[i].maker + '</span>';
+                        str += '<span>' + data[i].price + '</span>';
+                        str += '</div>';
+                    }
+                    document.getElementById('res_json').innerHTML = str;
                 }
             });
         });
