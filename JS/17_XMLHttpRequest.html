@@ -125,7 +125,16 @@
                 if(xhr.readyState == 4 && xhr.status == 200){
                     var data = xhr.responseXML;
                     var productList = data.getElementsByTagName('product');
-                    console.log(productList);
+                    var str = '<div>';
+                    for(let i = 0; i < productList.length; i++){
+                        str += '<ul>';
+                        str += '<li>' + productList[i].getAttribute('model') + '</li>';
+                        str += '<li>' + productList[i].getAttribute('maker') + '</li>';
+                        str += '<li>' + productList[i].getAttribute('price') + '</li>';
+                        str += '</ul>';
+                    }
+                    str += '</div>';
+                    document.getElementById('res_xml2').innerHTML = str;
                 }
             });
         });
