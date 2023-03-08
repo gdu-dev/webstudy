@@ -128,6 +128,39 @@
 
     </script>
 
+    <div>
+        <h1>비밀번호 검사</h1>
+        <input type="password" id="pw">
+        <span id="msg_pw"></span>
+    </div>
+    <script>
+
+        // 비밀번호 입력란
+        var pw = document.getElementById('pw');
+
+        // 비밀번호 메시지
+        var msgPw = document.getElementById('msg_pw');
+
+        // 비밀번호를 입력할때마다(keyup) 곧바로 정규식 검사
+        pw.addEventListener('keyup', () => {
+
+            // 비밀번호
+            // 1. 전체 5 ~ 20자
+            // 2. 대문자, 소문자, 숫자, 특수문자(!@#$%^&*)를 조합
+            // 3. 대문자, 소문자, 숫자, 특수문자 모두 반드시 포함
+
+            var regPw = /^[A-Za-z0-9!@#$%^&*]{5,20}$/;
+
+            if(regPw.test(pw.value)){
+                msgPw.textContent = '사용 가능한 비밀번호입니다.';
+            } else {
+                msgPw.textContent = '대문자, 소문자, 숫자, 특수문자(!@#$%^&*)를 모두 조합한 5~20자의 비밀번호를 만드세요.';
+            }
+
+        });
+
+    </script>
+
 
 </body>
 </html>
