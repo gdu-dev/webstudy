@@ -77,7 +77,7 @@
     </script>
 
     <div>
-        <input type="button" id="btn_req_xml1" value="제품정보요청">
+        <input type="button" id="btn_req_xml1" value="제품정보요청1">
         <div id="res_xml1"></div>
     </div>
     <script>
@@ -110,6 +110,25 @@
             });
         });
 
+    </script>
+
+    <div>
+        <input type="button" id="btn_req_xml2" value="제품정보요청2">
+        <div id="res_xml2"></div>
+    </div>
+    <script>
+        document.getElementById('btn_req_xml2').addEventListener('click', ()=>{
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'product2.xml', true);
+            xhr.send();
+            xhr.addEventListener('readystatechange', ()=>{
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var data = xhr.responseXML;
+                    var productList = data.getElementsByTagName('product');
+                    console.log(productList);
+                }
+            });
+        });
     </script>
 
 
