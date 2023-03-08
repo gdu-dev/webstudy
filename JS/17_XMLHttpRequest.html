@@ -140,6 +140,25 @@
         });
     </script>
 
+    <div>
+        <input type="button" id="btn_req_json" value="제품정보요청3">
+        <div id="res_json"></div>
+    </div>
+    <script>
+        document.getElementById('btn_req_json').addEventListener('click', ()=>{
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'product.json', true);
+            xhr.send();
+            xhr.addEventListener('readystatechange', ()=>{
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var data = xhr.responseText;
+                    console.log(data, typeof data);
+                    var obj = JSON.parse(data);
+                    console.log(obj, typeof obj);
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
