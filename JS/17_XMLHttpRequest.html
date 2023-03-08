@@ -92,7 +92,20 @@
                     var data = xhr.responseXML;
                     // <product> 태그들을 가져온다. (총 3개)
                     var productList = data.getElementsByTagName('product');
-                    // 
+                    // 가져온 제품 정보들을 화면에 나타낼 <table> 태그로 만든다.
+                    var str = '<table border="1">';
+                    str += '<thead><tr><td>모델</td><td>제조사</td><td>가격</td></tr></thead>';
+                    str += '<tbody>';
+                    for(let i = 0; i < productList.length; i++){
+                        str += '<tr>';
+                        str += '<td>' + productList[i].getElementsByTagName('model')[0].textContent + '</td>';
+                        str += '<td>' + productList[i].getElementsByTagName('maker')[0].textContent + '</td>';
+                        str += '<td>' + productList[i].getElementsByTagName('price')[0].textContent + '</td>';
+                        str += '</tr>';
+                    }
+                    str += '</tbody></table>';
+                    // <table> 태그를 화면에 나타낸다.
+                    document.getElementById('res_xml1').innerHTML = str;
                 }
             });
         });
