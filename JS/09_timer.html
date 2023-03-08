@@ -107,7 +107,7 @@
                     timer2.textContent = '땡';
                 } else {
                     timer2.textContent = countDown;
-                    fnTimer(countDown - 1);
+                    fnTimer(countDown - 1);  // 재귀 호출
                 }
             }, 1000);
         }
