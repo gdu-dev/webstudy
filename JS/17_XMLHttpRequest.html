@@ -76,6 +76,29 @@
 
     </script>
 
+    <div>
+        <input type="button" id="btn_req_xml1" value="제품정보요청">
+        <div id="res_xml1"></div>
+    </div>
+    <script>
+
+        document.getElementById('btn_req_xml1').addEventListener('click', () => {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'product1.xml', true);
+            xhr.send();
+            xhr.addEventListener('readystatechange', () => {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    // XML 응답 처리 속성은 responseXML이다.
+                    var data = xhr.responseXML;
+                    // <product> 태그들을 가져온다. (총 3개)
+                    var productList = data.getElementsByTagName('product');
+                    
+                }
+            });
+        });
+
+    </script>
+
 
 </body>
 </html>
