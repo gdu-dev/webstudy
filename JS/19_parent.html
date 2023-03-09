@@ -40,7 +40,7 @@
             function fnSendToChild(){
                 // child의 모든 구성요소를 인식할 수 있다.
                 child.onload = ()=>{
-                    child.document.getElementById('msg').textContent = msg.value;
+                    child.document.getElementById('receive_msg').textContent = msg.value;
                 }
             }
             
@@ -58,6 +58,11 @@
         <label for="msg">보낼 메시지</label>
         <input type="text" id="msg">
         <input type="button" id="btn_send" value="메시지전송">
+    </div>
+
+    <div>
+        <div>받은 메시지</div>
+        <div id="receive_msg"></div>
     </div>
 
 </body>
