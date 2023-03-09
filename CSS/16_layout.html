@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        /*
+            블록을 좌우로 배치하는 방법 - 1 (one true layout)
+            1. 부모 요소를 overflow: hidden; 처리한다.
+            2. 자식 요소를 float: left; (또는 float: right;) 처리한다.
+        */
+        .wrap1 {
+            overflow: hidden;
+        }
+        .wrap1 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            float: left;
+        }
+    </style>
+    <div class="wrap1">
+        <div>BOX1</div>
+        <div>BOX2</div>
+    </div>
+
+    <style>
+        /*
+            블록을 좌우로 배치하는 방법 - 2
+            1. 부모 요소를 display: flex; 처리한다.
+            2. 그럼 끝.
+        */
+        div {
+            box-sizing: border-box;
+        }
+        .wrap2 {
+
+            display: flex;
+            flex-wrap: nowrap;               /* nowrap : 디폴트, 부모 영역으로 자식들을 모두 모으는 방식, wrap : 자식들의 크기를 유지하기 때문에 부모 영역을 벗어날 수 있는 방식 */
+            flex-direction: row;             /* row, row-reverse, column, column-reverse */
+            justify-content: space-between;  /* center, space-around, space-between */
+            
+            width: 600px;
+            height: 100px;
+            background-color: antiquewhite;
+
+        }
+        .wrap2 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+    </style>
+    <div class="wrap2">
+        <div>BOX1</div>
+        <div>BOX2</div>
+        <div>BOX3</div>
+        <div>BOX4</div>
+        <div>BOX5</div>
+    </div>
+
+</body>
+</html>
