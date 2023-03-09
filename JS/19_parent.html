@@ -23,7 +23,7 @@
             var child = null;
 
             // 창 여는 함수
-            function fnOpenChild(url, name){
+            function fnOpenChild(url, target){
                 // 화면 중앙에 창 열기
                 const width = 480;
                 const height = 320;
@@ -32,7 +32,7 @@
                 const feature = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top;
                 // 창이 열려 있다면 열지 않기
                 if(child == null || child.closed){
-                    child = window.open(url, name, feature);
+                    child = window.open(url, target, feature);
                 }
             }
 
