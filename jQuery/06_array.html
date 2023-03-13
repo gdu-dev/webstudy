@@ -67,7 +67,16 @@
                     'name': '제임스',
                     'age': 40
                 }
-            ]
+            ];
+            var people = $('#people');
+            $.each(list, (i, element)=>{
+                var tr = $('<tr>');
+                tr.append($('<td>').text(i + 1));
+                tr.append($('<td>').text(element.name));
+                tr.append($('<td>').text(element.age));
+                people.append(tr);
+            });
+           
         });
     </script>
     <div>
