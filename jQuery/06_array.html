@@ -92,5 +92,25 @@
         </table>
     </div>
 
+    <script>
+        $(()=>{
+            var menu = $('.menu');
+            var menuList = [];
+            $.each(menu, (i, element)=>{
+                menuList.push($(element).text());
+            });
+            console.log(menuList);
+        });
+    </script>
+    <div>
+        <ul>
+            <li class="menu">메뉴1</li>
+            <li class="menu">메뉴2</li>
+            <li class="menu">메뉴3</li>
+            <li class="menu">메뉴4</li>
+            <li class="menu">메뉴5</li>
+        </ul>
+    </div>
+
 </body>
 </html>
