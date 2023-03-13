@@ -114,20 +114,14 @@
 
     <script>
         $(()=>{
-            [
-                {
-                    'regionNo': '02',
-                    'regionName': '서울'
-                },
-                {
-                    'regionNo': '031',
-                    'regionName': '경기'
-                },
-                {
-                    'regionNo': '032',
-                    'regionName': '인천'
-                }
-            ]
+            var optionList = [];
+            $.each($('#region option'), (i, element)=>{
+                var option = {};
+                option.regionNo = $(element).val();
+                option.regionName = $(element).text();
+                optionList.push(option);
+            });
+            console.log(optionList);
         });
     </script>
     <div>
@@ -137,8 +131,6 @@
             <option value="032">인천</option>
         </select>
     </div>
-
-
 
 </body>
 </html>
