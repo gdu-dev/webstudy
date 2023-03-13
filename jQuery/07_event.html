@@ -39,10 +39,19 @@
     </script>
 
     <div>
-        <a href="https://www.naver.com" target="_blank" id="link">네이버</a>
+        <a href="https://www.naver.com" target="_blank" class="link">네이버</a>
+        <a href="https://www.kakao.com" target="_blank" class="link">카카오</a>
+        <a href="https://www.google.com" target="_blank" class="link">구글</a>
     </div>
     <script>
-
+        $('.link').on('click', (event)=>{
+            if($(event.target).text() == '구글'){
+                alert($(event.target).text() + '로 이동이 불가능합니다.');
+                event.preventDefault();  // a 태그의 기본 클릭 이벤트는 href로 이동하는 것인데 이걸 막는 코드이다. (등록된 기본 이벤트를 수행하지 마시오.)
+                return;                  // 이벤트 리스너를 종료시킨다.
+            }
+            alert($(event.target).text() + '로 이동합니다.');  // 네이버로 이동합니다. 카카오로 이동합니다.
+        });
     </script>
 
 </body>
